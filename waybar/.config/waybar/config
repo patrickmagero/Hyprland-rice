@@ -1,0 +1,19 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "pulseaudio", "battery", "tray"],
+  "clock": {
+    "format": "  %a %d %b    %I:%M %p"
+  },
+  "battery": {
+    "format": "🔋 {capacity}%"
+  },
+  "pulseaudio": {
+    "format": "🔊 {volume}%"
+  },
+  "network": {
+    "format": "{ifname}: {ipaddr}"
+  }
+}
