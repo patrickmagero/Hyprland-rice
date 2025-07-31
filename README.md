@@ -1,44 +1,28 @@
-# 🌲 Patrick's Hyprland Dotfiles - Forest Edition
+# 🌿 Hyprland Forest Rice
 
-Welcome to my custom **Hyprland** dotfiles — carefully themed around nature, minimalism, and clean productivity. This setup is built for a fresh Arch Linux install and powered by manual configuration using [GNU Stow](https://www.gnu.org/software/stow/). 🌿
+A clean, functional, and nature-inspired rice for Hyprland on Arch Linux.  
+This setup includes a translucent Waybar, rounded corners, forest-themed colors, and carefully selected apps for a smooth Wayland workflow.
+## 🧰 Features
 
----
-
-## ✨ Theme: Nature-Inspired
-
-The overall color scheme leans into deep greens, dim ambiance, and forest vibes. All components are coordinated to blend smoothly with a forest wallpaper and comfortable UI spacing.
-
----
-
-## 🧰 Components
-
-| Tool         | Role                              | Status       |
-|--------------|-----------------------------------|--------------|
-| [Hyprland](https://hyprland.org) | Wayland window manager             | ✅ Configured |
-| Waybar       | Top bar with modules              | ✅ Styled     |
-| Wofi         | App launcher                      | ✅ Styled     |
-| Hyprpaper    | Wallpaper manager                 | ✅ Scripted   |
-| Hyprlock     | Lockscreen                        | ✅ Dimmed UI  |
-| Hypridle     | Idle daemon                       | ✅ Auto-lock  |
-| Kitty        | Terminal emulator                 | ✅ Themed     |
-| Swaync       | Notification daemon               | ✅ Themed     |
-| GTK          | Toolkit theme + cursor            | ✅ Applied    |
-| Thunar       | File manager (lightweight)        | ✅ Recommended |
-| Firefox      | Browser                           | 📦 Optional   |
+- **Window Manager:** Hyprland (Wayland)
+- **Status Bar:** Waybar (translucent, themed)
+- **Launcher:** Wofi
+- **Terminal:** Kitty
+- **File Manager:** Thunar
+- **Notifications:** Swaync
+- **Lockscreen:** Hyprlock
+- **Wallpaper Setter:** Hyprpaper
+- **Logout Menu:** Wlogout
+- **Power Tools:** `brightnessctl`, `udiskie`, `poweralertd`
 
 ---
 
-## 📂 Folder Structure
+## 🛠️ Required Packages
+
+> Install all dependencies using your package manager (`pacman` or `paru/yay`):
 
 ```bash
-dotfiles/
-├── hypr/               # Hyprland config
-├── waybar/             # Waybar config and styling
-├── wofi/               # Wofi theme
-├── kitty/              # Kitty terminal config
-├── swaync/             # Notification config
-├── gtk-3.0/            # GTK + cursor theme
-├── hyprpaper/          # Wallpaper script + images
-├── hyprlock/           # Lock screen config
-├── hypridle/           # Power management config
-└── README.md           # This file
+sudo pacman -S hyprland xorg-xwayland wl-clipboard kitty thunar firefox waybar wofi swaync \
+hyprpaper hyprlock hypridle brightnessctl udiskie poweralertd pavucontrol pipewire wireplumber \
+alsa-utils wlogout ttf-jetbrains-mono ttf-font-awesome noto-fonts noto-fonts-emoji \
+xdg-user-dirs xdg-utils neofetch btop

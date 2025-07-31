@@ -1,41 +1,89 @@
 * {
-  font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 13px;
   border: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  font-family: JetBrainsMono, monospace;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 0;
+  padding: 0 8px;
 }
 
+/* Make bar background translucent */
 window#waybar {
-  background: rgba(20, 30, 20, 0.85); /* deep forest green */
-  color: #d6f5d6; /* pale minty green */
+  background-color: rgba(20, 30, 20, 0.7); /* forest green tint + transparency */
+  color: #d0f0d0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Module-specific styling */
+#pulseaudio {
+  color: #88cc88;
+}
+
+#battery {
+  color: #aaff88;
+}
+
+#network {
+  color: #66cc88;
+}
+
+#clock {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#power {
+  color: #ff7777;
+  font-weight: bold;
+  padding: 0 12px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 4px;
+  background-color: rgba(255, 100, 100, 0.1);
+}
+/* Workspaces styling */
+#workspaces {
+  padding: 0 6px;
 }
 
 #workspaces button {
   padding: 0 10px;
-  color: #aad1aa;
-  background: transparent;
+  margin: 2px 4px;
   border-radius: 6px;
+  background-color: rgba(100, 150, 100, 0.1); /* subtle green hint */
+  color: #cccccc;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-#workspaces button.active {
-  background: #334d33;
+#workspaces button.focused {
+  background-color: rgba(120, 200, 120, 0.4); /* brighter forest green */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  background-color: rgba(140, 240, 140, 0.3);
   color: #ffffff;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#pulseaudio,
-#network,
+/* Tray styling */
 #tray {
-  padding: 4px 10px;
-  margin: 4px 6px;
-  background: #2e4032;
-  color: #d4f0cc;
+  padding: 0 8px;
 }
 
-#battery.critical {
-  color: #ff6b6b;
+#tray > .tray-icon {
+  padding: 2px;
+  margin: 0 4px;
+  background-color: rgba(255, 255, 255, 0.05); /* subtle backdrop */
+  border-radius: 6px;
+  min-width: 22px;
+  min-height: 22px;
+}
+#window {
+  color: #aaffcc;
+  font-style: italic;
+  padding: 0 12px;
+  margin: 0 6px;
+  background-color: rgba(80, 100, 80, 0.2);
+  border-radius: 8px;
 }
