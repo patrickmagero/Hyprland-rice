@@ -1,0 +1,27 @@
+{
+  "position": "top-right",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "notification-visibility": {
+    "default": true
+  },
+  "blacklist": [],
+  "widgets": ["title", "dnd", "notifications", "media"],
+  "dnd-ignored": [],
+  "actions": {
+    "left-click": "toggle-control-center",
+    "middle-click": "toggle-do-not-disturb",
+    "right-click": "clear-notifications"
+  },
+  "notification-urgency": {
+    "low": {
+      "timeout": 4
+    },
+    "normal": {
+      "timeout": 6
+    },
+    "critical": {
+      "timeout": 0
+    }
+  }
+}
