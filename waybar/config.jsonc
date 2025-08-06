@@ -1,0 +1,95 @@
+// -*- mode: jsonc -*-
+{
+  "height": 35,
+  "width": 1280,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/media"
+  ],
+
+  "modules-center": [
+    "hyprland/window"
+  ],
+
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "battery",
+    "clock",
+    "power-profiles-daemon"
+  ],
+
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": 3,
+      "HDMI-A-1": 3
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "$1",
+      "(.*) - fish": "[$1]"
+    },
+    "separate-outputs": true
+  },
+
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": " {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+
+  "network": {
+    "format-wifi": "{essid}  ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " Muted",
+    "on-click": "pavucontrol"
+  },
+
+  "custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎼"
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+  }
+}

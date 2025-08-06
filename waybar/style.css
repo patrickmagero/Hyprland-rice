@@ -1,0 +1,156 @@
+* {
+    font-family: 'JetBrainsMono Nerd Font Propo', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+window#waybar {
+    background-color: rgba(20, 30, 20, 0.8); /* dark forest green tint */
+    color: #e0f7e9;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    margin: 6px; /* optional: gives bar a floating feel */
+    border-radius: 15px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+
+button:hover {
+    background-color: rgba(40, 60, 40, 0.3);
+}
+
+/* Workspaces module */
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+    color: #d9ffdc;
+}
+
+#workspaces button:hover {
+    background-color: rgba(75, 110, 75, 0.5);
+    color: #e0ffe7;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: #4b6e4b;
+    color: #ffffff;
+    box-shadow: inset 0 -2px #a9efb5;
+}
+
+#workspaces button.urgent {
+    background-color: #ff5555;
+    color: white;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#power-profiles-daemon {
+    padding: 0 8px;
+    margin: 0 6px;
+}
+
+#window {
+    margin: 0 10px;
+    color: #a9efb5;
+}
+
+/* Reduce margin stacking for first/last module */
+.modules-left > widget:first-child,
+.modules-right > widget:last-child {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Clock */
+#clock {
+    background-color: #2e5339;
+}
+
+/* Battery */
+#battery {
+    background-color: #456b4f;
+    color: #d2ffd2;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: #3a8f5e;
+    color: #ffffff;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    0% { background-color: #ff4d4d; color: white; }
+    50% { background-color: #d32f2f; color: white; }
+}
+
+/* Power profiles */
+#power-profiles-daemon.performance {
+    background-color: #c62828;
+    color: white;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #4e7b61;
+    color: white;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #7fc97f;
+    color: #1b2e1b;
+}
+
+/* Network */
+#network {
+    background-color: #2e5339;
+}
+
+#network.disconnected {
+    background-color: #ff6666;
+}
+
+/* Audio */
+#pulseaudio {
+    background-color: #4d664d;
+    color: #d0f5d0;
+}
+
+#pulseaudio.muted {
+    background-color: #888;
+    color: #333;
+}
+
+/* Media player */
+#custom-media {
+    background-color: #557a5b;
+    color: #cceedd;
+    min-width: 80px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #1db954;
+    color: white;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa500;
+}
